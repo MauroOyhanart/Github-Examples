@@ -1,24 +1,12 @@
-name: hello-action
+name: Example workflow using github context
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
-  my-job:
-    runs-on: ubuntu-latest
-    name: A job to say hello
-    steps:
-      - name: Hello world action step
-        id: hello
-        uses: omenking/barsoom@0.0.6
-        with:
-          name: 'Brown'
-      # Use the output from the `hello` step
-      - name: Get the Output
-        run: echo "The time was ${{ steps.hello.outputs.greeting }}"
-  my-push-info-job:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: echo body fields
-        run: |
-          echo "${{ toJson(github.event) }}"
-          echo "${{ toJson(github.event) }}" | grep sender
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Print GitHub context
+        run: echo "The event that triggered this workflow is ${{ github.event_name }}."
