@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print job status
-        run: echo "The job status is ${{ job.status }}."
+        run: echo "The job -> ${{ job }}."
