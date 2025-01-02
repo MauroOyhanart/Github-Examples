@@ -1,6 +1,6 @@
 name: Example workflow using github context
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   build:
@@ -12,5 +12,3 @@ jobs:
         run: echo "The event that triggered this workflow is ${{ github.event_name }}."
       - name: echo github
         run: echo "${{ toJson(github) }}"
-      - name: echo env
-        run: echo "${{ toJson(env) }}"
