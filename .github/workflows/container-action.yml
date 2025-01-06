@@ -1,0 +1,17 @@
+name: My echo action with docker in use
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  echo-using-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: maurooyhanart/echo-action-docker@v2
+        with:
+          message: my message with docker in effective use v2!
+    
+  
