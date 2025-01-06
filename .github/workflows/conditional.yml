@@ -9,11 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     env: 
       my_var: ${{ github.action }}
+      my_second_var: 3
     steps:
       - name: "echo action"
         run:  |
           echo ${{ github.action }}
           echo $my_var
+          echo $my_second_var
   hello-world-2:
     runs-on: ubuntu-latest
     steps:
