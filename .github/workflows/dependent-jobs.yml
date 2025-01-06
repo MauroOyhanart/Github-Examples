@@ -1,4 +1,4 @@
-name: My echo action in use
+name: My echo action in use - again
 
 on:
   push:
