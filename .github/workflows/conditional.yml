@@ -1,14 +1,17 @@
 name: example-workflow
 on: [push]
+
+env:
+  MY_ENV_VAR: github.action
+
 jobs:
   hello-world:
-    if: github.repository == 'octo-org/octo-repo-prod'
     runs-on: ubuntu-latest
     steps:
-      - name: "Hello World"
-        run:  echo "Hello World!"
-  goodbye-moon:
+      - name: "echo action"
+        run:  echo ${{ github.action}}
+  hello-world-2:
     runs-on: ubuntu-latest
     steps:
-      - name: "Goodbye Moon"
-        run:  echo "Goodbye Moon!"
+      - name: "echo action 2"
+        run:  echo github.action
