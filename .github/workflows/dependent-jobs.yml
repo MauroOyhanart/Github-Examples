@@ -1,4 +1,4 @@
-name: Build, Test, and Deploy Workflow
+name: My echo action in use
 
 on:
   push:
@@ -6,26 +6,12 @@ on:
       - main
 
 jobs:
-  deploy:
-    needs: [build, test]
+  echo-using-action:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Deploy application
-        run: echo "Deploying to production..."
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Build application
-        run: echo "Building the application..."
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Test application
-        run: echo "Running tests..."
+        uses: maurooyhanart/echo-action@v1
+        with:
+          message: my message in effective use
+    
+  
