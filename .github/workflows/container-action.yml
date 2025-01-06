@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: maurooyhanart/echo-action-docker@v2
+        uses: maurooyhanart/echo-action-docker@46c4725ffcca44f5e66a638e049b42a31e72b4f3
         with:
-          message: my message with docker in effective use v2!
+          message: my message with docker in effective use fixed!
     
   
