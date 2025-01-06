@@ -16,6 +16,7 @@ jobs:
           echo ${{ github.action }}
           echo $my_var
           echo $my_second_var
+          echo initiated by ${{ github.actor }}, ${{ github.actor_id }}
   hello-world-2:
     runs-on: ubuntu-latest
     steps:
