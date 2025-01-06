@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: maurooyhanart/echo-action@v1
+        uses: maurooyhanart/echo-action@v2
         with:
-          message: my message in effective use
+          message: my message in effective use v2!
     
   
