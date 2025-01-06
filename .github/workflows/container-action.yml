@@ -1,4 +1,4 @@
-name: My echo action with docker in use
+name: My echo composite action
 
 on:
   push:
@@ -11,11 +11,11 @@ jobs:
     steps:
       - name: echo-message
         id: echo_message
-        uses: maurooyhanart/echo-action-docker@0690d98154a5c7dab4b769f537fda290beb0fb3a
+        uses: maurooyhanart/echo-action-composite@v2
         with:
-          message: my message with docker in effective use -> v2
-      - name: Get the output time
-        run: echo "The time was ${{ steps.echo_message.outputs.time }}"
+          message: my composite message in use
+      - name: Get the random number
+        run: echo "The time was ${{ steps.echo_message.outputs.random-number }}"
       - name: Get the stanley file
         run: |
           echo "The stanley file is"
