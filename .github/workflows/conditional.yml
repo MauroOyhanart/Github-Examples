@@ -7,9 +7,13 @@ env:
 jobs:
   hello-world:
     runs-on: ubuntu-latest
+    env: 
+      my_var: ${{ github.action }}
     steps:
       - name: "echo action"
-        run:  echo ${{ github.action}}
+        run:  |
+          echo ${{ github.action }}
+          echo $my_var
   hello-world-2:
     runs-on: ubuntu-latest
     steps:
