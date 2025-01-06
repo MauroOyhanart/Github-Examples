@@ -11,9 +11,9 @@ jobs:
     steps:
       - name: echo-message
         id: echo_message
-        uses: maurooyhanart/echo-action-docker@v2
+        uses: maurooyhanart/echo-action-docker@e6ddf3c6fd9948eb612103573fefd5ac9f554919
         with:
-          message: my message with docker in effective use fixed!
+          message: my message with docker in effective use -> v2
       - name: Get the output time
         run: echo "The time was ${{ steps.echo_message.outputs.time }}"
     
