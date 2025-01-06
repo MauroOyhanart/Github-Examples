@@ -1,8 +1,0 @@
-name: Example workflow using job context
-on: push
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print job status
-        run: echo "The job -> ${{ toJson(job) }}."
