@@ -41,7 +41,7 @@ jobs:
     steps:
       - name: pre-download
         run: |
-          echo 'time of upload: ${{ needs.build.outputs.time }}'
+          echo 'time of upload: ${{ needs.build.outputs.output-time }}'
       - name: download
         id: download
         uses: actions/download-artifact@v4
