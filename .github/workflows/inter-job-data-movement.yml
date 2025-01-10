@@ -43,5 +43,5 @@ jobs:
           echo 'ARTIFACT_PATH=${{ steps.download.outputs.download-path }}' >> $GITHUB_ENV
       - name: display-download
         run: |
-          file $ARTIFACT_PATH
-          cat $ARTIFACT_PATH
+          ls $ARTIFACT_PATH
+          cat $ARTIFACT_PATH/artifact
