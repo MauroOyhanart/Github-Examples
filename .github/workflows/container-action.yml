@@ -20,5 +20,8 @@ jobs:
         run: |
           echo "The stanley file is"
           cat stanley.txt 2>/dev/null || (echo "no stanley file found" && exit 1)
+      - name: print env
+        run: |
+          printenv
     
   
