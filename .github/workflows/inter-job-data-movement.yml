@@ -39,10 +39,10 @@ jobs:
           name: artifact
       - name: after-download
         run: |
-          echo downloaded from ${{ steps.download.outputs.download-path }}
+          echo downloaded on ${{ steps.download.outputs.download-path }}
           echo 'ARTIFACT_PATH=${{ steps.download.outputs.download-path }}' >> $GITHUB_ENV
       - name: display-download
         run: |
           echo $ARTIFACT_PATH
           ls $ARTIFACT_PATH
-          cat $ARTIFACT_PATH/artifact.jar
+          echo 'file contains: [' && cat $ARTIFACT_PATH/artifact.jar && echo ']'
