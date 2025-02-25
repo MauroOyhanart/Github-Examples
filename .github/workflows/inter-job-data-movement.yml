@@ -8,51 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    outputs:
-      output-time: ${{ steps.after-upload-time.outputs.time }}
     steps:
-    - name: generate artifact
-      run: |
-        mkdir build && echo "Contents of a Java 17 artifact" >> build/artifact.jar
-    - name: print-ls-pwd
-      run: |
-        ls
-        pwd
-    - name: upload
-      id: upload
-      uses: actions/upload-artifact@v4
+    - name: testing
+      uses: MauroOyhanart/IntegratePrsDemo@8c22e9361e3e87440c64133eebd24026b9b0ffb9
       with:
-        name: artifact
-        path: build/artifact.jar
-        if-no-files-found: error
-    - name: after-upload
-      run: |
-        echo id: ${{ steps.upload.outputs.artifact-id }}
-        echo url: ${{ steps.upload.outputs.artifact-url }}
-        echo digest: ${{ steps.upload.outputs.artifact-digest }}
-    - name: after-upload-time
-      id: after-upload-time
-      run: |
-        echo "time=$(date)">> $GITHUB_OUTPUT
-
-  use:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: pre-download
-        run: |
-          echo 'time of upload: ${{ needs.build.outputs.output-time }}'
-      - name: download
-        id: download
-        uses: actions/download-artifact@v4
-        with:
-          name: artifact
-      - name: after-download
-        run: |
-          echo downloaded on ${{ steps.download.outputs.download-path }}
-          echo 'ARTIFACT_PATH=${{ steps.download.outputs.download-path }}' >> $GITHUB_ENV
-      - name: display-download
-        run: |
-          echo $ARTIFACT_PATH
-          ls $ARTIFACT_PATH
-          echo 'file contains: [' && cat $ARTIFACT_PATH/artifact.jar && echo ']'
+        prs: ['hola', 'que tal']
