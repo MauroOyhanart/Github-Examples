@@ -12,6 +12,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
     - name: testing
       uses: MauroOyhanart/IntegratePrsDemo@db0ac564bc56c6ac8d39212b07bacbcfc686b943
