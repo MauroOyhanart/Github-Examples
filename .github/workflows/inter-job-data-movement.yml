@@ -12,4 +12,4 @@ jobs:
     - name: testing
       uses: MauroOyhanart/IntegratePrsDemo@26642ac9326e1702768af27719dbb5928634dd59
       with:
-        prs: ['hola', 'que tal']
+        prs: "1,2,65,778"
