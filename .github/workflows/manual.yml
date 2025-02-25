@@ -16,6 +16,6 @@ jobs:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
     - name: testing
-      uses: MauroOyhanart/IntegratePrsDemo@b7a70262cfe10959680c9c1b261dcfc0a08408ac
+      uses: MauroOyhanart/IntegratePrsDemo@764ec33424153293a2f7835fd307111e8078e86f
       with:
         prs: ${{ inputs.prs }}
