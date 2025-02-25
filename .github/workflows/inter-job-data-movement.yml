@@ -12,4 +12,4 @@ jobs:
     - name: testing
       uses: MauroOyhanart/IntegratePrsDemo@c475da297b1cdb39aa653665e8360aae00d0688f
       with:
-        prs: "1,2,3,4,89"
+        prs: "1,2,3,43,89"
