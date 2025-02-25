@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: testing
-      uses: MauroOyhanart/IntegratePrsDemo@26642ac9326e1702768af27719dbb5928634dd59
+      uses: MauroOyhanart/IntegratePrsDemo@c475da297b1cdb39aa653665e8360aae00d0688f
       with:
         prs: "1,2,3,4,89"
