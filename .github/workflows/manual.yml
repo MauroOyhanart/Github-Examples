@@ -1,0 +1,19 @@
+name: Manual Trigger with Params
+
+on:
+  workflow_dispatch:
+    inputs:
+      prs:
+        description: 'List of prs to approve'
+        required: true
+        type: string
+      
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: testing
+      uses: MauroOyhanart/IntegratePrsDemo@37ae3add82c7274076f8c25e3c3fa3fbbada5df6
+      with:
+        prs: ${{ inputs.prs }}
