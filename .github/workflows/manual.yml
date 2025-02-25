@@ -14,6 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: testing
-      uses: MauroOyhanart/IntegratePrsDemo@9360d15abfc7432c778036e915ef23dd2e57e8ea
+      uses: MauroOyhanart/IntegratePrsDemo@db0ac564bc56c6ac8d39212b07bacbcfc686b943
       with:
         prs: ${{ inputs.prs }}
